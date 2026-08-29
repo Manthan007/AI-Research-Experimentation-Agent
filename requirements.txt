@@ -1,2 +1,3 @@
 arxiv
 PyMuPDF
+langchain-text-splitters

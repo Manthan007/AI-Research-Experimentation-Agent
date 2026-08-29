@@ -3,4 +3,4 @@ PyMuPDF
 langchain-text-splitters
 chromadb 
 sentence-transformers 
-langchain-community
+langchain-huggingface

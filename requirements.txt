@@ -4,3 +4,5 @@ langchain-text-splitters
 chromadb 
 sentence-transformers 
 langchain-huggingface
+rank-bm25
+langchain-google-genai

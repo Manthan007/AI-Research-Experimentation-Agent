@@ -1,15 +1,10 @@
 import chromadb
-from langchain_huggingface import HuggingFaceEmbeddings
 from typing import List, Dict, Any
+from src.REA.retrieval.embeddings import get_embedding_model
 
 class VectorStoreManager:
     def __init__(self, persist_directory: str = "data/vector_db"):
-        """Initializes ChromaDB persistent client and embedding model."""
-        self.embedding_fn = HuggingFaceEmbeddings(
-            model_name="BAAI/bge-small-en-v1.5",
-            model_kwargs={'device': 'cpu'},
-            encode_kwargs={'normalize_embeddings': True} # Essential for Cosine Similarity
-        )
+        self.embedding_fn = get_embedding_model()
         self.client = chromadb.PersistentClient(path=persist_directory)
         self.collection = self.client.get_or_create_collection(
             name="arxiv_papers",

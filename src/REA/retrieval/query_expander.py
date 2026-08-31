@@ -4,7 +4,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 class QueryExpander:
     def __init__(self, llm=None):
         # Use Gemini 2.5 Flash by default (fast and free tier available)
-        self.llm = llm or ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.3)
+        self.llm = llm or ChatGoogleGenerativeAI(model="gemini-3.7-flash", temperature=0.3)
         self.prompt = ChatPromptTemplate.from_messages([
             ("system", (
                 "You are an AI research assistant. Given a user query about an academic paper, "
